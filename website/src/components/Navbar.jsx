@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: 'HOME', path: '/' },
     { name: 'HEADSETS', path: '/headsets' },
     { name: 'KEYBOARDS', path: '/keyboards' },
-    { name: 'MICE', path: '/mice' },
+    { name: 'MOUSE', path: '/mice' },
   ];
 
   return (
@@ -24,7 +24,6 @@ const Navbar = () => {
               <Link to={link.path} className={`transition-colors ${location.pathname === link.path ? 'text-razer-green' : 'text-white/70 hover:text-white'}`}>
                 {link.name}
               </Link>
-              {/* Linha brilhante embaixo do ativo */}
               {location.pathname === link.path && (
                 <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-razer-green shadow-[0_0_10px_#44d62c]"/>
               )}

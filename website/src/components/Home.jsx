@@ -1,67 +1,87 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import setupImg from '../assets/setup.png';
+import backgroundImg from '../assets/background.png';
 
 const Home = () => {
   const { scrollY } = useScroll();
-  const yText = useTransform(scrollY, [0, 500], [0, 200]);
+  const yText = useTransform(scrollY, [0, 500], [0, 250]);
+  const yCard = useTransform(scrollY, [0, 500], [0, -100]);
   const opacityText = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <div className="min-h-[200vh] bg-black text-white relative">
-      <div className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+    <div className="min-h-[150vh] bg-black text-white relative overflow-hidden">
+      <div className="h-screen flex flex-col items-center justify-center relative">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={backgroundImg} 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-50 select-none" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/80"></div>
+          <div className="absolute inset-0 opacity-[0.05] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+        </div>
 
-        <motion.h1 
-          style={{ y: yText, opacity: opacityText }}
-          className="text-[10vw] font-black leading-none tracking-tighter text-center z-10 mix-blend-exclusion"
-        >
-          PROJECT <br /> 
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-razer-green to-emerald-600">
-            GENESIS
-          </span>
-        </motion.h1>
+        <motion.div style={{ y: yText, opacity: opacityText }} className="z-10 text-center relative">
+          <h1 className="text-[12vw] font-black leading-none tracking-tighter mix-blend-screen drop-shadow-2xl">
+            PROJECT <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-razer-green to-emerald-400">
+              GENESIS
+            </span>
+          </h1>
+        </motion.div>
 
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-8 text-xl text-zinc-500 max-w-lg text-center font-mono"
-        >
-          Uma reinterpretação completa da experiência de e-commerce. 
-          Role para descobrir.
-        </motion.p>
         <motion.div 
           animate={{ y: [0, 10, 0] }} 
           transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 text-razer-green"
+          className="absolute bottom-10 text-razer-green z-20 font-mono text-sm tracking-widest"
         >
-          ↓
+          SCROLL TO EXPLORE
         </motion.div>
       </div>
-      <div className="relative z-10 bg-zinc-900 py-32 px-6 rounded-t-[3rem] -mt-20 border-t border-razer-green/20">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-5xl font-bold mb-6">O FUTURO É <span className="text-razer-green">AGORA</span></h2>
-            <p className="text-lg text-gray-400 leading-relaxed mb-6">
-              Este projeto não é apenas uma loja. É uma demonstração de poder do React + Framer Motion.
-              Cada pixel foi posicionado para criar imersão total.
+      <div className="relative z-20 py-20 container mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-6xl font-black mb-8 leading-tight">
+              BEYOND <span className="text-razer-green">REALITY</span>
+            </h2>
+            <p className="text-xl text-gray-400 leading-relaxed mb-8 border-l-4 border-razer-green pl-6">
+              Experimente a próxima geração de periféricos. Projetado para imersão total, desempenho inigualável e estética cyberpunk definitiva.
             </p>
             <div className="flex gap-4">
-              <div className="p-4 bg-black rounded-xl border border-white/10">
-                <h3 className="text-2xl font-bold text-white">120Hz</h3>
-                <span className="text-xs text-gray-500">SMOOTH SCROLL</span>
-              </div>
-              <div className="p-4 bg-black rounded-xl border border-white/10">
-                <h3 className="text-2xl font-bold text-white">3D</h3>
-                <span className="text-xs text-gray-500">INTERACTIONS</span>
-              </div>
+              {['IMMERSION', 'SPEED', 'CONTROL'].map((item) => (
+                <span key={item} className="px-4 py-2 border border-white/20 rounded-full text-xs font-bold tracking-widest hover:bg-white hover:text-black transition-colors cursor-default">
+                  {item}
+                </span>
+              ))}
             </div>
-          </div>
-          <div className="relative h-[400px] bg-gradient-to-tr from-razer-green/20 to-purple-500/20 rounded-2xl flex items-center justify-center border border-white/5">
-            <span className="font-mono text-razer-green animate-pulse">
-              [Ifoto]
-            </span>
-          </div>
+          </motion.div>
+
+          <motion.div 
+            style={{ y: yCard }}
+            className="perspective-1000 flex justify-center"
+          >
+            <motion.div
+              className="relative w-full max-w-md aspect-[4/5] bg-gradient-to-br from-zinc-800 to-black rounded-3xl border border-white/10 overflow-hidden shadow-2xl group"
+              whileHover={{ rotateY: 15, rotateX: -10, scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div className="absolute inset-0 bg-razer-green/10 opacity-0 group-hover:opacity-100 transition-opacity z-10" />
+              <img 
+                src={setupImg} 
+                alt="Setup" 
+                className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent z-20 translate-y-4 group-hover:translate-y-0 transition-transform">
+                <h3 className="text-3xl font-bold text-white mb-2">ULTIMATE SETUP</h3>
+                <p className="text-razer-green font-mono text-sm">VIEW COLLECTION </p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
