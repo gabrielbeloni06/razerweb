@@ -139,8 +139,8 @@ const Mice = () => {
                whileInView={{ y: 0, opacity: 1 }}
                viewport={{ once: true }}
              >
-                <h3 className="text-4xl font-black text-white mb-2">ESPORTS EVOLVED</h3>
-                <p style={{ color: currentStyle.color }} className="font-mono">FOR THE PROS</p>
+                <h3 className="text-4xl font-black text-white mb-2">E-SPORTS</h3>
+                <p style={{ color: currentStyle.color }} className="font-mono">PARA OS PROS</p>
              </motion.div>
            </motion.div>
            <motion.div
@@ -150,7 +150,7 @@ const Mice = () => {
               transition={{ delay: 0.3 }}
            >
               <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-none">
-                NOTHING <br/> WEIGHS YOU <span className="transition-colors duration-500" style={{ color: currentStyle.color }}>DOWN</span>
+                ULTRAPASSE <br/> OS <span className="transition-colors duration-500" style={{ color: currentStyle.color }}>LIMITES</span>
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
                 Criado com os melhores atletas de esports do mundo. O Viper V3 Pro apresenta nosso formato mais refinado, garantindo manuseio e controle impecáveis.
@@ -186,7 +186,7 @@ const Mice = () => {
                 viewport={{ once: true }}
                 className="text-4xl md:text-6xl font-black text-white uppercase"
               >
-                In <span style={{ color: currentStyle.color }} className="transition-colors duration-500">Action</span>
+                Em <span style={{ color: currentStyle.color }} className="transition-colors duration-500">Ação</span>
               </motion.h2>
               <p className="hidden md:block text-gray-500 font-mono text-sm">OFFICIAL TRAILER</p>
            </div>
@@ -200,7 +200,7 @@ const Mice = () => {
            >
              <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/C28fG6aN6bM?autoplay=0&controls=0&rel=0" 
+                src="https://www.youtube.com/embed/nqMrZyBS3GA?autoplay=0&controls=1&rel=0" 
                 title="Razer Viper" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowFullScreen
@@ -209,7 +209,7 @@ const Mice = () => {
            </motion.div>
 
            <div className="mt-20 text-center">
-             <h3 className="text-2xl font-bold text-white mb-6">READY TO UPGRADE?</h3>
+             <h3 className="text-2xl font-bold text-white mb-6">PRONTO PARA O UPGRADE?</h3>
              <button 
                 className="px-12 py-4 font-black rounded-full text-black transition-transform hover:scale-105"
                 style={{ backgroundColor: currentStyle.color }}

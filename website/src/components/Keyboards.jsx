@@ -54,7 +54,7 @@ const Keyboards = () => {
               MECHANICAL PRECISION
             </motion.h4>
             <h1 className="text-6xl md:text-8xl font-black text-white mb-6 uppercase leading-none">
-              Black<br/>Widow
+              Hunstman<br/>
             </h1>
             <p className="text-gray-400 max-w-md mb-8 text-lg">
               Sinta a diferença. Switches mecânicos projetados para a execução tátil e sonora definitiva em jogos.
@@ -153,7 +153,7 @@ const Keyboards = () => {
                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                
                <div className="absolute bottom-6 left-6 z-20">
-                  <h3 className="text-2xl font-bold text-white">BATTLESTATION READY</h3>
+                  <h3 className="text-2xl font-bold text-white">FEITO PARA VENCER</h3>
                </div>
              </motion.div>
            </motion.div>
@@ -168,7 +168,7 @@ const Keyboards = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-white mb-12 uppercase"
           >
-            Watch the <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Reveal</span>
+            Assista ao <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Review</span>
           </motion.h2>
 
           <motion.div
@@ -186,7 +186,7 @@ const Keyboards = () => {
 
             <iframe 
               className="w-full h-full"
-              src="https://www.youtube.com/embed/H37rP-B6l9o?autoplay=0&controls=1&rel=0" 
+              src="https://www.youtube.com/embed/qv-dBMg-_pU?autoplay=0&controls=1&rel=0" 
               title="YouTube video player" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowFullScreen

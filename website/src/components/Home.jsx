@@ -26,9 +26,11 @@ const Home = () => {
           <h1 className="text-[12vw] font-black leading-none tracking-tighter mix-blend-screen drop-shadow-2xl">
             PROJECT <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-razer-green to-emerald-400">
-              GENESIS
+              RAZERWEB
             </span>
+            
           </h1>
+          
         </motion.div>
 
         <motion.div 
@@ -47,7 +49,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-6xl font-black mb-8 leading-tight">
-              BEYOND <span className="text-razer-green">REALITY</span>
+              A NOVA <span className="text-razer-green">REALIDADE</span>
             </h2>
             <p className="text-xl text-gray-400 leading-relaxed mb-8 border-l-4 border-razer-green pl-6">
               Experimente a próxima geração de periféricos. Projetado para imersão total, desempenho inigualável e estética cyberpunk definitiva.
@@ -77,8 +79,8 @@ const Home = () => {
                 className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent z-20 translate-y-4 group-hover:translate-y-0 transition-transform">
-                <h3 className="text-3xl font-bold text-white mb-2">ULTIMATE SETUP</h3>
-                <p className="text-razer-green font-mono text-sm">VIEW COLLECTION </p>
+                <h3 className="text-3xl font-bold text-white mb-2">BY GAMERS, FOR GAMERS.</h3>
+                <p className="text-razer-green font-mono text-sm">VEJA OS PRODUTOS </p>
               </div>
             </motion.div>
           </motion.div>
