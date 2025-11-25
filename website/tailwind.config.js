@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+        fontFamily: {
+        sans: ['"Chakra Petch"', 'sans-serif'],
+        },
       colors: {
         'razer-green': '#44d62c',
       }

@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { products } from '../data/products';
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentProduct = products[currentIndex];
+  const { scrollY } = useScroll();
+  const yBackground = useTransform(scrollY, [0, 500], [0, 150]);
+  const yProduct = useTransform(scrollY, [0, 500], [0, 50]);
 
-  return (
+    return (
     <div 
-      className="relative w-full h-screen overflow-hidden transition-colors duration-700 ease-in-out flex items-center justify-center"
-      style={{ backgroundColor: currentProduct.color }}
+        className="sticky top-0 z-0 w-full h-screen overflow-hidden transition-colors duration-700 ease-in-out flex items-center justify-center"
+        style={{ backgroundColor: currentProduct.color }}
     >
-      <div className="absolute inset-0 flex items-center justify-center select-none pointer-events-none">
+      <motion.div 
+        style={{ y: yBackground }} 
+        className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
+      >
         <h1 className="text-[15vw] font-black text-white opacity-10 leading-none tracking-tighter">
           RAZER
         </h1>
-      </div>
+      </motion.div>
       <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 h-full items-center">
         <div className="text-white space-y-6 order-2 md:order-1">
           <motion.div
@@ -42,22 +48,51 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-        <div className="relative h-[50vh] md:h-[70vh] flex items-center justify-center order-1 md:order-2">
-          <AnimatePresence mode='wait'>
+        <motion.div 
+        style={{ y: yProduct }}
+        className="relative h-[50vh] md:h-[70vh] flex items-center justify-center order-1 md:order-2 perspective-1000"
+        >
+        <AnimatePresence mode='wait'>
             <motion.img
-              key={currentProduct.id}
-              src={currentProduct.image}
-              alt={currentProduct.name}
-              className="max-h-full drop-shadow-2xl object-contain"
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -50, scale: 1.1, transition: { duration: 0.2 } }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            key={currentProduct.id}
+            src={currentProduct.image}
+            alt={currentProduct.name}
+            className="max-h-full drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] object-contain z-20"
+            initial={{ 
+                opacity: 0, 
+                rotateY: -90,
+                scale: 0.5,
+                x: 100
+            }}
+            animate={{ 
+                opacity: 1, 
+                rotateY: 0,
+                scale: 1,
+                x: 0,
+                y: [0, -15, 0] 
+            }}
+            exit={{ 
+                opacity: 0, 
+                rotateY: 90,  
+                scale: 0.5,  
+                x: -100,     
+                transition: { duration: 0.3 } 
+            }}
+            transition={{ 
+                rotateY: { duration: 0.6, ease: "circOut" },
+                scale: { duration: 0.6 },
+                opacity: { duration: 0.4 },
+                y: { 
+                repeat: Infinity,
+                duration: 4, 
+                ease: "easeInOut" 
+                } 
+            }}
             />
-          </AnimatePresence>
-        </div>
+        </AnimatePresence>
+        </motion.div>
       </div>
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-30">
         {products.map((product, index) => (
           <button
             key={product.id}
