@@ -54,7 +54,7 @@ const Keyboards = () => {
               MECHANICAL PRECISION
             </motion.h4>
             <h1 className="text-6xl md:text-8xl font-black text-white mb-6 uppercase leading-none">
-              Hunstman<br/>
+              Huntsman<br/>
             </h1>
             <p className="text-gray-400 max-w-md mb-8 text-lg">
               Sinta a diferença. Switches mecânicos projetados para a execução tátil e sonora definitiva em jogos.
