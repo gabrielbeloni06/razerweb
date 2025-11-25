@@ -80,5 +80,5 @@ O projeto simula a sensação de navegar em um site premiado do **Awwwards**, of
 
 ## 🌐 Acesse o Site do Projeto
 ``
-Em breve...
+https://projectrazerweb.vercel.app
 ``
