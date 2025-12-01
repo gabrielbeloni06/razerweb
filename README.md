@@ -31,7 +31,7 @@ Em breve...
 
 ## 🎯 Sobre o Projeto
 
-**Project Genesis** é uma reinterpretação moderna e imersiva da experiência de compra online, inspirada no estilo **Cyberpunk Gamer** da Razer.  
+**Project RazerWeb** é uma reinterpretação moderna e imersiva da experiência de compra online, inspirada no estilo **Cyberpunk Gamer** da Razer.  
 O foco está em:
 
 - Animações fluidas e cinematográficas  
